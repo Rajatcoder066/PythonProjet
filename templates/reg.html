@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+
+{%block title%}Registration{%endblock title%}
+
+{%block body%} 
+<div class="container mt-3">
+
+{%csrf_token %}
+
+
+    <h1>Rajat Icecream</h1>
+    <form action="/reg" method="post">
+        {%csrf_token%}
+        <div class="form-group mt-2">
+            <label for="name">Enter Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your Name" name="name">
+           
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter your email"name="email">
+            
+        </div>
+        <div class="form-group">
+            <label for="email">Create a Password</label>
+            <input type="text" class="form-control" id="pass" placeholder="Create a password"name="password">
+            
+        </div>
+        
+        <div class="form-group">
+            <label for="address">Enter your phone number</label>
+            <input class="form-control" name="phone" id="phone" rows="3">
+            
+        </div>
+    
+        <input type="submit" value="submit" id="submit" class="btn btn-primary mt-3"></input>
+    </form>
+    <a href="/login" id=""> Login Account   </a>
+</div>
+
+{%endblock body%}
